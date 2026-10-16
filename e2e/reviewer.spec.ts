@@ -250,6 +250,7 @@ test('reviewer reasoning and the complete product map are keyboard accessible wi
   await page.keyboard.press('Enter');
   const chapters = page.getByTestId('reviewer-chapter-map');
   await expect(chapters).toBeVisible();
+  await expect(chapters.getByRole('heading', { level: 2 })).toBeFocused();
   await chapters.locator('summary').first().focus();
   await page.keyboard.press('Enter');
   const detail = chapters.getByRole('link', { name: /^Model detail/ });

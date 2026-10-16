@@ -215,6 +215,7 @@ export default function GatewayApp({ initialView, reviewerEntry = false }: { ini
   const runId = useRef(0);
   const cancelRef = useRef<() => void>(() => {});
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const focusReviewerMap = useRef(false);
 
   const onReviewerBrief = useCallback(() => {
     if (reviewMode && !reviewPage && !selectedRequest && view === 'connect' && reviewProgress.chapter === 'adopt') markReviewer({ type:'demonstrated', chapter:'adopt' });
@@ -367,6 +368,13 @@ export default function GatewayApp({ initialView, reviewerEntry = false }: { ini
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }, [selectedRequest, view]);
+
+  useLayoutEffect(() => {
+    if (!reviewPage || !focusReviewerMap.current) return;
+    focusReviewerMap.current = false;
+    document.getElementById('chapters')?.scrollIntoView({ block: 'start' });
+    document.getElementById('rw-map-title')?.focus({ preventScroll: true });
+  }, [reviewPage]);
 
   function toast(message: string) { setNotice(message); if (toastTimer.current) clearTimeout(toastTimer.current); toastTimer.current = setTimeout(() => setNotice(''), 4400); }
   function clearRun() { timers.current.forEach(clearTimeout); timers.current = []; runId.current += 1; }
@@ -842,8 +850,8 @@ export default function GatewayApp({ initialView, reviewerEntry = false }: { ini
   function reviewerMap() {
     if (busy) cancelRun(); if (comparing) { clearRun(); setComparing(false); }
     setReviewResumePath(reviewerHref(window.location.pathname + window.location.search, reviewProgress.chapter));
+    focusReviewerMap.current = true;
     setReviewPage(true); setSelectedRequest(null); window.history.pushState({}, '', '/review#chapters');
-    requestAnimationFrame(() => { document.getElementById('chapters')?.scrollIntoView({block:'start'}); document.getElementById('rw-map-title')?.focus({preventScroll:true}); });
   }
   function resumeReviewer() {
     setReviewPage(false); window.history.pushState({}, '', reviewerHref(reviewResumePath, reviewProgress.chapter));
