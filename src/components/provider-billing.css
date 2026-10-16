@@ -1,0 +1,71 @@
+/* A documented billing relationship with one primary path and a conditional fallback. */
+.ops-context.byok-billing { padding:0; background:var(--background); }
+.byok-billing-heading { display:flex; justify-content:space-between; gap:24px; align-items:center; padding:24px; border-bottom:1px solid var(--border); }
+.byok-billing-heading h2 { font-size:16px; line-height:24px; font-weight:500; letter-spacing:-.02em; }
+.byok-billing-heading p { margin-top:4px; color:var(--muted); font-size:12px; line-height:20px; overflow-wrap:anywhere; }
+.byok-validation { flex:none; display:flex; gap:12px; align-items:center; margin:0; font-size:12px; line-height:20px; }
+.byok-validation dt { color:var(--muted); }
+.byok-validation dd { margin:0; padding:4px 8px; border:1px solid var(--border); border-radius:4px; color:var(--muted); }
+.byok-billing-body { min-width:0; padding:0 24px; }
+.byok-primary-path { display:grid; grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr); gap:24px; align-items:center; padding:32px 0; }
+.byok-path-step { display:flex; gap:12px; min-width:0; align-items:center; }
+.byok-path-icon { display:grid; place-items:center; width:40px; height:40px; flex:none; border:1px solid var(--border); border-radius:6px; background:var(--surface); color:var(--muted); }
+.byok-path-step > div { min-width:0; }
+.byok-path-step small { display:block; margin-bottom:4px; color:var(--muted); font-size:12px; line-height:20px; }
+.byok-path-step strong { display:block; font-size:14px; line-height:20px; font-weight:500; overflow-wrap:anywhere; }
+.byok-path-step p { margin-top:4px; color:var(--muted); font-size:12px; line-height:20px; }
+.byok-path-arrow { color:var(--muted); }
+.byok-fallback { display:flex; align-items:center; gap:12px; padding:20px 0; border-top:1px solid var(--border); color:var(--muted); font-size:12px; line-height:20px; }
+.byok-fallback > svg { flex:none; }
+.byok-fallback > span { margin-right:16px; }
+.byok-fallback > div { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 16px; min-width:0; }
+.byok-fallback strong { font-weight:400; color:var(--foreground); }
+.byok-billing-foot { display:flex; align-items:center; justify-content:space-between; gap:8px 24px; flex-wrap:wrap; border-top:1px solid var(--border); padding:12px 0; }
+.byok-billing-foot > p { color:var(--muted); font-size:12px; line-height:20px; }
+.byok-billing-links { display:flex; flex-wrap:wrap; gap:8px 24px; }
+.byok-billing-links .text-button { font-size:12px; line-height:20px; }
+.byok-evidence { margin-bottom:12px; }
+.byok-evidence > summary { display:flex; align-items:center; gap:8px; min-height:44px; list-style:none; cursor:pointer; color:var(--muted); font-size:12px; line-height:20px; }
+.byok-evidence > summary::-webkit-details-marker { display:none; }
+.byok-evidence > summary > svg { flex:none; }
+.byok-evidence[open] > summary > svg { transform:rotate(90deg); }
+.byok-evidence > div { max-width:76ch; padding:8px 0 16px 22px; font-size:12px; line-height:20px; color:var(--muted); }
+.byok-evidence p { max-width:76ch; }
+.byok-evidence code { font-size:12px; overflow-wrap:anywhere; }
+.byok-evidence dl { display:flex; flex-wrap:wrap; gap:16px 40px; margin:0 0 16px; }
+.byok-evidence dd { margin:4px 0 0; color:var(--foreground); }
+/* Labels, primary values, descriptions and connectors share tracks. */
+@media(min-width:1024px) {
+ .byok-primary-path { grid-template-rows:20px minmax(40px,auto) auto; row-gap:4px; align-items:stretch; }
+ .byok-primary-path > :nth-child(1) { grid-column:1; }
+ .byok-primary-path > :nth-child(2) { grid-column:2; }
+ .byok-primary-path > :nth-child(3) { grid-column:3; }
+ .byok-primary-path > :nth-child(4) { grid-column:4; }
+ .byok-primary-path > :nth-child(5) { grid-column:5; }
+ .byok-path-step { display:grid; grid-template-columns:40px minmax(0,1fr); grid-template-rows:subgrid; grid-row:1 / span 3; row-gap:4px; }
+ .byok-path-icon { grid-column:1; grid-row:2; align-self:center; }
+ .byok-path-step > div { grid-column:2; grid-row:1 / span 3; display:grid; grid-template-rows:subgrid; row-gap:4px; }
+ .byok-path-step small,.byok-path-step p { margin:0; }
+ .byok-path-step strong { align-self:center; }
+ .byok-path-arrow { grid-row:2; align-self:center; }
+}
+@media(max-width:1023px) {
+  .byok-primary-path { gap:16px; }
+  .byok-path-step { flex-direction:column; align-items:flex-start; gap:12px; }
+  .byok-path-arrow { align-self:center; }
+}
+@media(max-width:767px) {
+  .byok-billing-heading { align-items:flex-start; flex-direction:column; gap:16px; padding:20px 16px; }
+  .byok-billing-body { padding:0 16px; }
+  .byok-primary-path { grid-template-columns:minmax(0,1fr); padding:24px 0; gap:12px; }
+  .byok-path-step { flex-direction:row; align-items:center; gap:16px; }
+  .byok-path-arrow { margin-left:12px; transform:rotate(90deg); }
+  .byok-path-icon { width:40px; }
+  .byok-fallback { display:grid; grid-template-columns:16px minmax(0,1fr); gap:8px 12px; align-items:start; }
+  .byok-fallback > svg { margin-top:2px; }
+  .byok-fallback > span { margin:0; }
+  .byok-fallback > div { grid-column:2; display:block; }
+  .byok-fallback p { margin-top:4px; }
+  .byok-billing-foot { align-items:flex-start; padding:20px 0 8px; }
+  .byok-billing-links { gap:0 24px; }
+}

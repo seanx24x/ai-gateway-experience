@@ -1,0 +1,52 @@
+/* One continuation attaches to the artifact that made it relevant. */
+.journey-next { display:flex; align-items:center; gap:32px; padding:24px 0; margin-top:32px; border-top:1px solid var(--border); min-width:0; }
+.journey-next-copy { flex:1; min-width:0; }
+.journey-next h2 { font-size:16px; line-height:24px; font-weight:500; }
+.journey-next p { max-width:68ch; margin-top:8px; font-size:14px; line-height:24px; color:var(--muted); }
+.journey-next > .button { flex:none; }
+.journey-next-dismiss { align-self:flex-start; }
+.journey-return { width:min(var(--content-width),calc(100% - 2 * var(--gutter))); margin:24px auto 0; min-height:44px; display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px; font-size:12px; color:var(--muted); }
+.journey-return code { overflow-wrap:anywhere; color:var(--foreground); }
+.journey-return-dot { align-self:flex-start; margin-top:7px; width:6px; height:6px; border-radius:50%; background:var(--amber); }
+.journey-return .text-button { margin-left:auto; min-height:44px; font-size:12px; }
+.prepared-verification { margin-top:24px; padding-top:24px; border-top:1px solid var(--border); font-size:14px; line-height:24px; }
+.prepared-verification-heading { display:flex; align-items:flex-start; gap:8px; }
+.prepared-verification-heading svg { margin-top:4px; color:var(--muted); flex:none; }
+.prepared-verification h3 { font-size:14px; line-height:24px; font-weight:500; }
+.prepared-verification > p { margin-top:12px; color:var(--muted); }
+.prepared-verification ol { list-style:none; margin:20px 0; padding:0; counter-reset:verification; }
+.prepared-verification li { position:relative; padding:0 0 20px 28px; counter-increment:verification; }
+.prepared-verification li::before { content:counter(verification); position:absolute; left:0; top:0; font-family:var(--font-geist-mono); font-size:12px; color:var(--muted); }
+.prepared-verification li strong,.prepared-verification li span { display:block; font-size:12px; line-height:20px; }
+.prepared-verification li strong { font-weight:500; }
+.prepared-verification li span { margin-top:4px; color:var(--muted); }
+.prepared-verification > .text-button { min-height:44px; font-size:12px; }
+.prepared-verification > small { display:block; color:var(--muted); font-size:12px; line-height:20px; margin-top:12px; }
+.code-line.is-modified { border-left:2px solid var(--blue); background:color-mix(in srgb,var(--blue) 7%,transparent); }
+.ew-response-receipt[data-receipt] { animation:receipt-settle 200ms var(--ease) both; }
+.ew-receipt-measure { display:flex; gap:4px; align-items:baseline; font-family:var(--font-geist-mono); font-size:12px; }
+.ew-receipt-measure small { font-family:var(--font-geist-sans); font-size:12px; color:var(--muted); }
+.ew-observatory > .journey-next { padding-bottom:0; }
+.ew-route-status { display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:16px 0 24px; font-size:12px; color:var(--muted); }
+.ew-route-status strong { font-weight:500; color:var(--foreground); }
+@keyframes receipt-settle { from { opacity:.6; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+@media(max-width:767px) {
+ .journey-next { align-items:flex-start; flex-wrap:wrap; gap:16px; margin-top:24px; padding:24px 0; }
+ .journey-next-copy { flex-basis:calc(100% - 48px); }
+ .journey-next > .button { order:2; max-width:100%; white-space:normal; text-align:left; }
+ .journey-next-dismiss { margin-left:auto; }
+ .journey-return > span:not(.journey-return-dot) { max-width:calc(100% - 24px); }
+ .journey-return .text-button { margin-left:18px; }
+}
+@media(prefers-reduced-motion:reduce) { .ew-response-receipt[data-receipt] { animation:none; } }
+
+.ew-composer-actions.has-receipt .button.primary { background:var(--background); color:var(--foreground); border-color:var(--border); box-shadow:none; }
+.mw-model-detail > .journey-next,.mw-virtual-detail > .journey-next { margin-top:24px; padding-bottom:16px; }
+.mw-model-detail > .journey-next + .mw-detail-actions,.mw-virtual-detail > .journey-next + .mw-detail-actions { padding-top:0; margin-top:0; }
+
+.journey-return-reason { display:block; margin-top:4px; font-size:14px; line-height:24px; font-weight:500; color:var(--foreground); }
+
+.journey-return-explanation { margin-top:4px; max-width:68ch; font-size:12px; line-height:20px; }
+.journey-return-explanation summary { cursor:pointer; width:fit-content; min-height:32px; display:list-item; list-style:disclosure-closed inside; }
+.journey-return-explanation[open] summary { list-style-type:disclosure-open; }
+.journey-return-explanation p { margin:4px 0 12px; }

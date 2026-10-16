@@ -1,0 +1,13 @@
+.git
+docs
+scripts
+e2e
+artifacts
+test-results*
+playwright-report
+playwright.config.ts
+src/**/*.test.ts
+README.md
+AGENTS.md
+THIRD_PARTY_NOTICES.md
+*.tsbuildinfo

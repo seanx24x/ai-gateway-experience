@@ -1,0 +1,25 @@
+.recorded-interval { animation:recorded-context 200ms ease-out both; min-width:0; padding:24px 0 16px; }
+.ri-axis,.ri-row { display:grid; grid-template-columns:120px minmax(0,1fr) 84px; gap:16px; align-items:center; }
+.ri-axis { color:var(--muted); font-size:12px; line-height:20px; margin-bottom:16px; }
+.ri-axis > div { position:relative; height:20px; font-family:var(--font-geist-mono),monospace; }
+.ri-axis > div > span { position:absolute; left:50%; transform:translateX(-50%); white-space:nowrap; font-size:10px; }
+.ri-axis > div > span:first-child { left:0; transform:none; }
+.ri-axis > div > span:last-child { left:auto; right:0; transform:none; }
+.recorded-interval ol { padding:0; margin:0; list-style:none; }
+.ri-row { width:100%; min-height:60px; padding:8px 0; border:0; border-top:1px solid var(--border); background:transparent; color:var(--foreground); font:inherit; font-size:12px; text-align:left; }
+button.ri-row { cursor:pointer; }
+button.ri-row:hover,button.ri-row[aria-pressed='true'] { background:var(--surface); }
+.ri-label { display:flex; align-items:center; gap:8px; }
+.ri-number { color:var(--muted); font-family:var(--font-geist-mono),monospace; }
+.ri-track { position:relative; height:24px; background:linear-gradient(to right,var(--border) 1px,transparent 1px); background-size:50% 100%; border-right:1px solid var(--border); }
+.ri-track i { position:absolute; display:block; top:7px; height:10px; min-width:2px; border-radius:2px; background:var(--foreground); transition:opacity 120ms; }
+.ri-row--failed .ri-track i { background:var(--red); opacity:.7; }
+.ri-generation .ri-track i { background:var(--muted); opacity:.35; }
+.ri-duration { text-align:right; font-family:var(--font-geist-mono),monospace; font-variant-numeric:tabular-nums; }
+.ri-duration > span { display:block; font-family:var(--font-geist-sans),sans-serif; color:var(--muted); font-size:10px; line-height:16px; }
+.ri-evidence,.ri-no-attempts,.ri-excluded { padding:16px 0 0; font-size:12px; line-height:20px; color:var(--muted); }
+.ri-evidence strong { color:var(--foreground); font-weight:500; }
+.ri-evidence p { margin:4px 0 0; }
+@media(max-width:540px) { .ri-axis,.ri-row { grid-template-columns:80px minmax(0,1fr) 64px; gap:8px; } .ri-label { gap:4px; font-size:11px; } .ri-duration { font-size:11px; } .ri-axis > div > span:nth-child(2) { display:none; } }
+@keyframes recorded-context { from { opacity:.4; } to { opacity:1; } }
+@media(prefers-reduced-motion:reduce) { .recorded-interval { animation:none; } .ri-track i { transition:none; } }

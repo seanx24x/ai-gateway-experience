@@ -1,0 +1,8 @@
+.request-identity { display:flex; align-items:center; flex-wrap:wrap; gap:8px; min-width:0; font-size:12px; line-height:20px; color:var(--muted); }
+.request-identity code { color:var(--foreground); font-size:12px; overflow-wrap:anywhere; }
+.request-identity-marker { display:inline-block; width:6px; height:6px; flex:none; border-radius:50%; background:var(--foreground); }
+.request-identity-marker--recovered { background:var(--amber); }
+.request-identity-marker--failed { background:var(--red); }
+.request-identity-marker--cancelled { background:transparent; border:1px solid var(--muted); }
+
+.request-travel-marker { position:fixed; width:6px; height:6px; border-radius:50%; pointer-events:none; z-index:1000; }

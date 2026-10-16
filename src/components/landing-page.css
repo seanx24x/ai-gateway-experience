@@ -1,0 +1,39 @@
+/* Public composition. One request surface; secondary material follows below. */
+.public-app .overview-opening { display:block; width:calc(100% - 2 * var(--gutter)); max-width:var(--content-width); margin:0 auto; padding:32px 0 0; }
+.public-app .hero { display:block; text-align:center; max-width:720px; margin:0 auto 24px; padding:0; }
+.public-app .hero h1 { font-size:64px; line-height:72px; letter-spacing:-.055em; font-weight:600; }
+.public-app .hero p { max-width:54ch; margin:16px auto 0; font-size:16px; line-height:24px; }
+.public-app .hero-actions { display:flex; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:20px; gap:24px; }
+.public-app .hero-actions .button { min-height:44px; }
+.public-app .app-header { flex-wrap:wrap; }
+.public-app .public-nav { flex-wrap:wrap; gap:16px; }
+.public-app .overview-details { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); width:calc(100% - 2 * var(--gutter)); max-width:var(--content-width); padding:64px 0; margin:0 auto; gap:64px; align-items:start; }
+.public-app .overview-details h2 { font-size:32px; line-height:40px; letter-spacing:-.04em; font-weight:500; margin-bottom:16px; }
+.public-app .overview-details p { color:var(--muted); font-size:16px; line-height:24px; max-width:44ch; }
+.public-app .overview-details .text-button { margin-top:24px; }
+.landing-integration { min-width:0; }
+.landing-client-tabs { display:flex; border-bottom:1px solid var(--border); gap:24px; margin-bottom:16px; }
+.landing-client-tabs button { min-height:44px; background:transparent; border:0; padding:12px 0; color:var(--muted); font-size:14px; position:relative; }
+.landing-client-tabs button[aria-selected='true'] { color:var(--foreground); }
+.landing-client-tabs button[aria-selected='true']::after { content:''; position:absolute; left:0; right:0; bottom:-1px; height:2px; background:var(--foreground); }
+.public-app .overview-details .landing-integration-note { color:var(--muted); font-size:12px; line-height:20px; margin-top:12px; }
+.public-app .journey-strip { margin-top:0; }
+.public-app .context-guidance { margin-bottom:0; }
+@media(max-width:1023px) {
+  .public-app .public-nav a[href='/leaderboards'],.public-app .public-nav a[href^='https://vercel.com/docs'] { display:none; }
+  .public-app .overview-opening { padding-top:32px; }
+  .public-app .hero { margin-bottom:32px; }
+  .public-app .hero h1 { font-size:56px; line-height:64px; }
+  .public-app .overview-details { gap:32px; }
+}
+@media(max-width:767px) {
+  .public-app .overview-opening { padding-top:24px; }
+  .public-app .hero { text-align:left; margin-bottom:24px; }
+  .public-app .hero h1 { font-size:40px; line-height:44px; }
+  .public-app .hero p { font-size:14px; line-height:24px; margin:16px 0 0; }
+  .public-app .hero-actions { justify-content:flex-start; gap:12px; margin-top:20px; }
+  .public-app .hero-actions .button { padding-left:12px; padding-right:12px; }
+  .public-app .overview-details { grid-template-columns:minmax(0,1fr); padding-top:48px; padding-bottom:48px; }
+  .public-app .overview-details h2 { font-size:28px; line-height:36px; }
+  .landing-client-tabs { gap:20px; }
+}

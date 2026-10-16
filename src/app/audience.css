@@ -1,0 +1,57 @@
+/* Context appears at the decision point, with one quiet next action. */
+.concept-link { font-size:12px; line-height:16px; color:var(--muted); white-space:nowrap; padding:8px 0; }
+.concept-link:hover { color:var(--foreground); }
+.context-guidance { width:calc(100% - 2 * var(--gutter)); max-width:var(--content-width); margin:24px auto 0; padding:0; display:flex; gap:16px; align-items:center; }
+.guidance-placeholder { height:44px; }
+.guidance-copy { min-width:0; flex:1; }
+.guidance-copy strong,.guidance-copy h2 { font-size:14px; line-height:20px; font-weight:500; }
+.guidance-copy p { color:var(--muted); font-size:12px; line-height:20px; margin-top:4px; max-width:78ch; }
+.guidance-action { flex-shrink:0; }
+.guidance-action.button { min-height:36px; padding:7px 12px; font-size:12px; }
+.guidance-dismiss { flex-shrink:0; color:var(--muted); }
+.workspace-entry { display:flex; gap:12px 24px; flex-wrap:wrap; margin-top:24px; font-size:12px; line-height:20px; }
+.workspace-entry > span { flex-basis:100%; color:var(--muted); }
+.workspace-entry a { display:inline-flex; align-items:center; gap:4px; }
+.workspace-entry a:hover { color:var(--blue); }
+.setup-issue { display:flex; align-items:flex-start; gap:12px; padding:16px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:24px; font-size:14px; line-height:20px; }
+.setup-issue p { color:var(--muted); margin-top:4px; line-height:24px; }
+.setup-issue .icon-button { margin-left:auto; }
+.monitor-scope { color:var(--muted); font-size:12px; line-height:20px; margin:0 0 16px; }
+.recovery-signal { width:100%; display:flex; align-items:center; gap:16px; border:0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:16px 0; margin:0 0 24px; background:transparent; text-align:left; }
+.recovery-signal[aria-pressed='true'] { color:var(--blue); }
+.recovery-signal:hover { background:var(--surface); }
+.recovery-signal strong { display:block; font-weight:500; font-size:14px; line-height:20px; }
+.recovery-signal small { display:block; color:var(--muted); font-size:12px; line-height:20px; margin-top:4px; }
+.recovery-symbol { width:32px; height:32px; color:var(--amber); display:grid; place-items:center; flex-shrink:0; }
+.recovery-action { margin-left:auto; display:flex; gap:8px; align-items:center; white-space:nowrap; font-size:14px; line-height:20px; }
+.metric-explanation { padding:0 0 16px; color:var(--muted); font-size:12px; line-height:20px; }
+.metric-explanation summary { cursor:pointer; width:fit-content; color:var(--foreground); padding:4px 0; }
+.metric-explanation p { line-height:20px; max-width:78ch; padding:8px 0; }
+.request-guidance { margin:16px 0 24px; padding:16px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.request-guidance .field-label { color:var(--muted); font-size:12px; line-height:16px; margin-bottom:8px; }
+.request-guidance h3 { font-size:16px; line-height:24px; }
+.request-guidance p { font-size:14px; line-height:24px; color:var(--muted); margin-top:8px; }
+.request-guidance .button { margin-top:16px; }
+.guidance-authentication,.guidance-budget,.guidance-eligibility,.guidance-rate-limit { border-left:2px solid var(--amber); padding-left:16px; }
+#request-list { scroll-margin-top:24px; }
+.table-scroll abbr { text-decoration:none; cursor:help; }
+.request-pagination { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:16px 0; font-size:12px; line-height:20px; color:var(--muted); }
+.request-pagination > div { display:flex; align-items:center; gap:8px; }
+.request-pagination .button { min-height:36px; font-size:12px; padding:7px 12px; }
+.request-detail-view :is(.request-metadata,.drawer-response):focus-visible { outline:2px solid var(--blue); outline-offset:5px; }
+@media(max-width:600px) {
+  .concept-link { margin-left:auto; }
+  .context-guidance { margin-top:16px; gap:12px; align-items:flex-start; position:relative; padding-right:52px; flex-wrap:wrap; }
+  .guidance-placeholder { height:68px; }
+  .guidance-copy { flex-basis:100%; }
+  .guidance-copy p { display:none; }
+  .guidance-action { min-height:36px; }
+  .guidance-dismiss { position:absolute; right:16px; top:0; }
+  .workspace-entry { margin-top:16px; gap:8px 20px; }
+  .workspace-entry > span { display:none; }
+  .recovery-signal { gap:12px; flex-wrap:wrap; }
+  .recovery-signal > span:nth-child(2) { flex:1; min-width:180px; }
+  .recovery-action { margin-left:44px; font-size:12px; }
+  .request-pagination { flex-wrap:wrap; }
+  .request-pagination .button { min-height:44px; }
+}

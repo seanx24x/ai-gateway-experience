@@ -1,0 +1,30 @@
+{
+  "name": "gateway-experience",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 4317",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 4317",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/lib/*.test.ts",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "geist": "latest",
+    "lucide-react": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "agent-browser": "^0.38.2",
+    "tsx": "latest",
+    "typescript": "latest",
+    "@playwright/test": "latest"
+  },
+  "packageManager": "pnpm@10.30.3"
+}

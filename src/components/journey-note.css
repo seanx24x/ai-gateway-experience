@@ -1,0 +1,11 @@
+.journey-note { min-width:0; color:var(--muted); font-size:12px; line-height:20px; }
+.journey-note > summary { min-height:44px; display:flex; align-items:center; cursor:pointer; list-style:none; }
+.journey-note > summary::before { content:'+'; margin-right:8px; }
+.journey-note[open] > summary::before { content:'−'; }
+.journey-note > summary::-webkit-details-marker { display:none; }
+.journey-note dl { display:grid; gap:12px; margin:0 0 20px; max-width:80ch; }
+.journey-note dl > div { display:grid; grid-template-columns:96px minmax(0,1fr); gap:16px; }
+.journey-note dt { color:var(--foreground); }
+.journey-note dd { margin:0; }
+.journey-note summary:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+@media(max-width:540px) { .journey-note dl > div { grid-template-columns:1fr; gap:4px; } }

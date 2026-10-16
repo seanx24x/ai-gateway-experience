@@ -1,0 +1,42 @@
+/* A receipt is a document in the shared canvas, with ordinary page scrolling. */
+.request-detail-view { width:min(var(--content-width),calc(100% - var(--gutter) * 2)); margin:0 auto; padding:32px 0 64px; min-width:0; }
+.request-detail-navigation { display:flex; align-items:center; gap:24px; padding-bottom:24px; border-bottom:1px solid var(--border); margin-bottom:32px; }
+.request-detail-navigation .text-button { min-height:44px; gap:8px; }
+.request-detail-navigation > span { font-size:12px; line-height:20px; color:var(--muted); border-left:1px solid var(--border); padding-left:24px; }
+.request-detail-view .drawer-body { padding:0; }
+.request-detail-view .receipt-summary { display:grid; grid-template-columns:minmax(0,1fr) minmax(360px,.72fr); gap:48px; align-items:center; margin-bottom:32px; }
+.request-detail-view .receipt-summary-copy { min-width:0; }
+.request-detail-view .receipt-topline { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+.request-detail-view .receipt-headline { margin:20px 0 12px; font-size:28px; line-height:36px; letter-spacing:-.035em; font-weight:500; text-wrap:balance; }
+.request-detail-view .receipt-cause { max-width:68ch; margin:0; font-size:16px; line-height:24px; }
+.request-detail-view .request-identity { margin-top:20px; }
+.request-detail-view .receipt-values { gap:24px; padding:24px 0 24px 32px; border-left:1px solid var(--border); }
+.request-detail-view .receipt-values strong { font-size:20px; line-height:28px; margin-top:8px; }
+.request-detail-view .drawer-tabs { border-top:1px solid var(--border); margin-bottom:32px; }
+.request-detail-view .drawer-trace { margin:0 0 32px; padding:0; }
+.request-detail-view .rt-root:has(.rt-empty) :is(.rt-axis,.rt-legend,.rt-empty p) { display:none; }
+.request-detail-view .rt-root:has(.rt-empty) .rt-empty { padding:16px 0; border-bottom:0; }
+.request-detail-view [role='tabpanel'] { min-width:0; }
+.request-detail-view .rt-root--instrument { padding:0; }
+.request-detail-view .request-metadata { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 48px; }
+.request-detail-view .request-metadata > div { display:flex; justify-content:space-between; align-items:baseline; gap:24px; padding:16px 0; border-bottom:1px solid var(--border); min-width:0; }
+.request-detail-view .request-metadata dd { max-width:65%; overflow-wrap:anywhere; text-align:right; }
+.request-detail-view .request-guidance { display:flex; align-items:center; justify-content:space-between; gap:32px; padding-top:24px; border-top:1px solid var(--border); }
+.request-detail-view .request-guidance > div { max-width:68ch; }
+.request-detail-view .request-guidance .button { flex-shrink:0; }
+.request-detail-view .drawer-monitor-link { margin:24px 0 0; }
+@media(max-width:1023px) {
+  .request-detail-view .receipt-summary { grid-template-columns:1fr; gap:24px; }
+  .request-detail-view .receipt-values { padding:24px 0 0; border-left:0; border-top:1px solid var(--border); }
+}
+@media(max-width:767px) {
+  .request-detail-view { padding-top:24px; padding-bottom:48px; }
+  .request-detail-navigation { gap:16px; margin-bottom:24px; padding-bottom:16px; }
+  .request-detail-navigation > span { padding-left:16px; }
+  .request-detail-view .receipt-headline { font-size:24px; line-height:32px; }
+  .request-detail-view .receipt-values { gap:16px; }
+  .request-detail-view .receipt-values strong { font-size:16px; line-height:24px; }
+  .request-detail-view .request-metadata { grid-template-columns:1fr; }
+  .request-detail-view .request-guidance { display:block; }
+  .request-detail-view .request-guidance .button { margin-top:16px; }
+}

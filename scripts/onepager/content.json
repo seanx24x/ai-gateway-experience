@@ -1,0 +1,33 @@
+{
+  "product": "AI Gateway",
+  "category": "An independent concept",
+  "title": [
+    "From first request to",
+    "a system you understand."
+  ],
+  "author": "Sean Lynch / Design Engineer",
+  "intro": "I designed and built a connected AI Gateway experience that starts with a useful result, makes resilience visible, and carries the same intent from experimentation into integration and operation.",
+  "sections": [
+    {
+      "label": "The opportunity",
+      "body": "Gateway brings model access, routing and observability together. I explored how the interface could make that system understandable through use: establish value for a newcomer, give an experienced developer precise control, and preserve context between tasks. The core proposition is a connected journey from first use to deliberate control."
+    },
+    {
+      "label": "The signature interaction",
+      "body": "Run a support request, induce a provider outage, and inspect recovery. Reorder providers, then compare Original and Draft with the same workload and pinned conditions. Review the change before simulated activation, verify it, and carry the configuration into an editor brief. Request identity connects the response, timing, route and operational receipt."
+    },
+    {
+      "label": "The craft",
+      "body": "The route becomes the working surface. Restrained Geist typography, shared content edges and progressive disclosure establish hierarchy. Motion follows actions; drag and keyboard controls reach the same outcome, with reduced-motion support and light and dark themes. Model versus provider, preference versus restriction, and recovery versus model fallback remain explicit. Details expand within the page."
+    },
+    {
+      "label": "The implementation",
+      "body": "Built with Next.js, React and TypeScript: persisted snapshots, replay, controlled comparisons and revision history. The prototype simulates requests, metrics, conditions and activation. It collects no credentials and makes no live Gateway calls. Editor instructions and a downloadable starter prepare integration in the visitor's project, with server-side authentication. Opening an editor never proves a connection."
+    }
+  ],
+  "walkthrough": "A five-chapter walkthrough connects Understand, Trust, Control, Adopt and Operate. Allow roughly 5-7 minutes for the main path; optional commentary exposes user goals, product opportunities, decisions, tradeoffs and questions for further validation.",
+  "review_url": "https://sean-ai-gateway-concept.vercel.app/review",
+  "repository_url": "https://github.com/seanx24x/ai-gateway-experience",
+  "review_label": "Explore the experience",
+  "repository_label": "View the source"
+}
